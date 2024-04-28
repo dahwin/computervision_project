@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Screen Sharing</title>
+</head>
+<body>
+    <h1>Screen Sharing</h1>
+    <video id="screen-video" autoplay></video>
+
+    <script>
+        const video = document.getElementById('screen-video');
+        const websocketUrl = 'ws://localhost:8001/';
+
+        const websocket = new WebSocket(websocketUrl);
+
+        websocket.onopen = () => {
+            console.log('WebSocket connection established.');
+        };
+
+        websocket.onmessage = (event) => {
+            const data = event.data;
+            video.src = URL.createObjectURL(new Blob([data]));
+        };
+
+        websocket.onclose = () => {
+            console.log('WebSocket connection closed.');
+        };
+    </script>
+</body>
+</html>

@@ -6,7 +6,7 @@ import numpy as np
 import cv2
 from win32api import GetSystemMetrics
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd = r"C:\\Program Files\\Tesseract-OCR\\tesseract"
+pytesseract.pytesseract.tesseract_cmd = r"C:\Users\ALL USER\Desktop\computervision_project\Tesseract-OCR\tesseract.exe"
 
 def main():
     width = GetSystemMetrics(0)
@@ -38,8 +38,9 @@ def main():
         # captured_video.write(img_final)
 
         if int(time.time()) % 2 == 0:
-            take_screenshot()
-            print(data)
+            # take_screenshot()
+            # print(data)
+            print(img_final)
 
         if cv2.waitKey(10) == ord(("r")):
             break

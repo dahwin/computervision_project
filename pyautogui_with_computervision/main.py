@@ -7,8 +7,8 @@ import pyautogui
 # x = dir(pyautogui)
 # print('\n'.join(x))
 # print(len(x))
-
-pyautogui.click(499,1060)
+time.sleep(5)
+pyautogui.click(37.0, 51.0)
 
 
 
