@@ -20,13 +20,13 @@ while True:
     img = np.array(img)
     img_final = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     # print(img_final)
-    # cv2.imshow('Dawin', img_final)
+    cv2.imshow('Dahwin', img_final)
     captured_video.write(img_final)
     if cv2.waitKey(10) & 0xFF == ord('q'):
         break
     frame_count += 1
-    if time.time() - start_time >= 5:
-        break
+    # if time.time() - start_time >= 5:
+    #     break
 
 # Calculate FPS
 fps = frame_count / (time.time() - start_time)
